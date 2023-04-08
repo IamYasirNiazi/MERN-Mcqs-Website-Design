@@ -197,7 +197,8 @@ export async function getServerSideProps(){
   await connectMongo()
 
 
-  const res = await Data.find({})
+  const res = await Data.find({category:
+    "abbreviations"})
 
   // const server = "http://localhost:3000";
 
@@ -212,8 +213,10 @@ export async function getServerSideProps(){
 
     // const mcqs = await res.json();
     // console.log(mcqs)
+
     return({
       props: {
+        // mcqs: JSON.parse(JSON.stringify(res))
         mcqs: JSON.parse(JSON.stringify(res))
       }
     })
