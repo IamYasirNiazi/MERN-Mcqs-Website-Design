@@ -4,7 +4,7 @@ import Data from '../../models/Data';
 
 const abbreviations = async (req, res)=>{
   
-  const {method} = req;
+  const {method} = await req;
   
   console.log('CONNECTING TO MONGO');
   await connectMongo();
@@ -28,7 +28,7 @@ const abbreviations = async (req, res)=>{
         try {
           const dataFetch = await Data.find({category: 'abbreviations'});
           // res.status(200).json({ success: true, data: dataFetch })
-          res.status(200).json(dataFetch)
+          await res.status(200).json(dataFetch)
           break;
           
         } catch (error) {
