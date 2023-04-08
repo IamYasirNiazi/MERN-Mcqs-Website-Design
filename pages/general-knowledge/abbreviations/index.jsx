@@ -213,11 +213,11 @@ export async function getServerSideProps(){
 
     const mcqs = await res.json();
     console.log(mcqs)
-
+    
+    // mcqs: JSON.parse(JSON.stringify(res))
     return({
       props: {
-        mcqs:
-        // mcqs: JSON.parse(JSON.stringify(res))
+        mcqs
       }
     })
 }
