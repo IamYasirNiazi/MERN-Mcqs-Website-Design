@@ -4,8 +4,8 @@ import Header from '@/src/components/Header'
 import Footer from '@/src/components/Footer'
 import BreadCrumb from '@/src/components/BreadCrumb'
 import React, { useEffect, useState } from 'react'
-// import connectMongo from '@/utils/connectMongo'
-// import Data from '@/models/Data'
+import connectMongo from '@/utils/connectMongo'
+import Data from '@/models/Data'
 
 
 const BasicGeneralKnowledge = ({mcqs}) => {
@@ -194,30 +194,30 @@ export default BasicGeneralKnowledge
 export async function getServerSideProps(){
 
 
-  // await connectMongo()
+  await connectMongo()
 
 
-  // const res = await Data.find({category:
-    // "abbreviations"})
+  const res = await Data.find({category:
+    "abbreviations"})
 
-  const server = "http://localhost:3000";
+  // const server = "http://localhost:3000";
 
   
-  const res = await fetch(`${server}/api/abbreviations`, {
+  // const res = await fetch(`${server}/api/abbreviations`, {
       
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json"
-      },
-    });
+  //     method: "GET",
+  //     headers: {
+  //       "Content-Type": "application/json"
+  //     },
+  //   });
 
-    const mcqs = await res.json();
-    console.log(mcqs)
+    // const mcqs = await res.json();
+    // console.log(mcqs)
     
-    // mcqs: JSON.parse(JSON.stringify(res))
+    // mcqs
     return({
       props: {
-        mcqs
+        mcqs: JSON.parse(JSON.stringify(res))
       }
     })
 }
