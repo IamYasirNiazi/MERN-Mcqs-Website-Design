@@ -1,13 +1,19 @@
-// import mongoose from 'mongoose';
+import mongoose from 'mongoose';
 
-// const connectMongo = async () =>{
-//     await mongoose.connect(process.env.MONGODB_URI);
-// }
+const connectMongo = async () =>{
+    await mongoose.connect(process.env.MONGODB_URI);
+}
 
-// export default connectMongo;
+export default connectMongo;
 
 
 
+
+
+
+
+
+/*
 
 import mongoose from 'mongoose';
 
@@ -25,3 +31,5 @@ await mongoose.connect(process.env.MONGODB_URI, {
 }
 
 export default connectMongo;
+
+*/

@@ -195,7 +195,7 @@ export async function getServerSideProps(){
   const server = "http://localhost:3000";
 
   
-  const res = await fetch(`${server}/api/abbreviations`, {
+  const res = await fetch(`/api/abbreviations`, {
       
       method: "GET",
       headers: {
