@@ -4,13 +4,13 @@ import Data from '../../models/Data';
 
 const abbreviations = async (req, res)=>{
   
-  const {method} = await req;
+  // const {method} = req;
   
   console.log('CONNECTING TO MONGO');
   await connectMongo();
   console.log('CONNECTED TO MONGO');
   
-  switch (method) {
+  // switch (method) {
     // case "POST":
     //   try {
     //     const dataUpload = await Data.create(req.body);
@@ -24,23 +24,23 @@ const abbreviations = async (req, res)=>{
 
     //   }
       
-      case "GET":
-        try {
+      // case "GET":
+        // try {
           const dataFetch = await Data.find({category: 'abbreviations'});
           // res.status(200).json({ success: true, data: dataFetch })
-          await res.status(200).json(dataFetch)
-          break;
+          res.status(200).json(dataFetch)
+          // break;
           
-        } catch (error) {
-          console.log(error);
-          res.status(400).json({ success: false})
+        // } catch (error) {
+        //   console.log(error);
+        //   res.status(400).json({ success: false})
           
-        }
+        // }
   
-    default:
-      res.status(400).json({ success: false })
-      break;
-  }
+    // default:
+    //   res.status(400).json({ success: false })
+      // break;
+  // }
 
 
 }
