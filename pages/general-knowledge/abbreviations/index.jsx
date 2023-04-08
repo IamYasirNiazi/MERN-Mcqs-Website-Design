@@ -200,10 +200,16 @@ export async function getServerSideProps(){
   // const res = await Data.find({category:
     // "abbreviations"})
 
-  const server = "http://localhost:3000";
+  // const server = "http://localhost:3000";
 
   
-  const res = await fetch(`${server}/api/abbreviations`);
+  const res = await fetch(`http://localhost:3000/api/abbreviations`, {
+      
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json"
+      },
+    });
 
     const mcqs = await res.json();
     console.log(mcqs)
