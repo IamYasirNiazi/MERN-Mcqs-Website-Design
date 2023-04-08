@@ -2,7 +2,7 @@ import connectMongo from '../../utils/connectMongo';
 import Data from '../../models/Data';
 
 
-const apiData = async (req, res)=>{
+const abbreviations = async (req, res)=>{
   
   const {method} = req;
   
@@ -45,4 +45,4 @@ const apiData = async (req, res)=>{
 
 }
 
-export default apiData
+export default abbreviations
