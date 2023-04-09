@@ -8,6 +8,37 @@ import React, { useEffect, useState } from 'react'
 // import Data from '@/models/Data'
 
 
+export async function getServerSideProps(){
+
+
+  // await connectMongo()
+
+
+  // const res = await Data.find({category:
+    // "abbreviations"})
+
+  const server = "http://localhost:3000";
+
+  
+  const res = await fetch(`${server}/api/abbreviations`, {
+      
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json"
+      },
+    });
+
+    const mcqs = await res.json();
+    console.log(mcqs)
+    
+    // mcqs: JSON.parse(JSON.stringify(res))
+    return({
+      props: {
+        mcqs
+      }
+    })
+}
+
 const BasicGeneralKnowledge = ({mcqs}) => {
 
   const router = useRouter()
@@ -191,33 +222,33 @@ export default BasicGeneralKnowledge
 
 
 
-export async function getServerSideProps(){
+// export async function getServerSideProps(){
 
 
-  // await connectMongo()
+//   // await connectMongo()
 
 
-  // const res = await Data.find({category:
-    // "abbreviations"})
+//   // const res = await Data.find({category:
+//     // "abbreviations"})
 
-  const server = "https://localhost:3000";
+//   const server = "http://localhost:3000";
 
   
-  const res = await fetch(`${server}/api/abbreviations`, {
+//   const res = await fetch(`${server}/api/abbreviations`, {
       
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json"
-      },
-    });
+//       method: "GET",
+//       headers: {
+//         "Content-Type": "application/json"
+//       },
+//     });
 
-    const mcqs = await res.json();
-    console.log(mcqs)
+//     const mcqs = await res.json();
+//     console.log(mcqs)
     
-    // mcqs: JSON.parse(JSON.stringify(res))
-    return({
-      props: {
-        mcqs
-      }
-    })
-}
+//     // mcqs: JSON.parse(JSON.stringify(res))
+//     return({
+//       props: {
+//         mcqs
+//       }
+//     })
+// }

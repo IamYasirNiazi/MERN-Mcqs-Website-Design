@@ -1,7 +1,6 @@
 import connectMongo from '../../utils/connectMongo';
 import Data from '../../models/Data';
 
-
 const abbreviations = async (req, res)=>{
   
   const {method} = req;
