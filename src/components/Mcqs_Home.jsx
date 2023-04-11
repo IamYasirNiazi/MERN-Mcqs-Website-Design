@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 import { Col, Container, Row } from 'reactstrap'
 
@@ -13,10 +14,12 @@ const McqsSection = () => {
                             <div className='mcq-section__container__row__col__main__line'></div>
                             
                             <div>
-                                <h6 className='mcq-section__container__row__col__main__sub-heading general' style={{background: 'theme-color("site-third")'}}>Aptitude</h6>
-                                <h6 className='mcq-section__container__row__col__main__sub-heading general'>Reasoning</h6>
-                                <h6 className='mcq-section__container__row__col__main__sub-heading general'>English</h6>
-                                <h6 className='mcq-section__container__row__col__main__sub-heading general'>General Knowledge</h6>
+                                <h6 className='mcq-section__container__row__col__main__sub-heading general' style={{background: 'theme-color("site-third")'}}><Link href={'/general-knowledge/abbreviations'}>Abbreviations</Link></h6>
+                                <h6 className='mcq-section__container__row__col__main__sub-heading general'><Link href={'/general-knowledge/basic-general-knowledge'}>Basic General Knowledge</Link></h6>
+                                <h6 className='mcq-section__container__row__col__main__sub-heading general'><Link href={'/general-knowledge/famous-places'}>Famous Places</Link></h6>
+                                <h6 className='mcq-section__container__row__col__main__sub-heading general'><Link href={'/general-knowledge/inventions'}>Inventions</Link></h6>
+                                <h6 className='mcq-section__container__row__col__main__sub-heading general'><Link href={'/general-knowledge/sports'}>Sports</Link></h6>
+                                <h6 className='mcq-section__container__row__col__main__sub-heading general'><Link href={'/general-knowledge/technology'}>Technology</Link></h6>
                             </div>
                         </div>
 
@@ -25,12 +28,12 @@ const McqsSection = () => {
                             <div className='mcq-section__container__row__col__main__line'></div>
                             
                             <div>
-                                <h6 className='mcq-section__container__row__col__main__sub-heading computer'>Computer Fundamental</h6>
-                                <h6 className='mcq-section__container__row__col__main__sub-heading computer'>Operating System</h6>
-                                <h6 className='mcq-section__container__row__col__main__sub-heading computer'>Ms Word</h6>
-                                <h6 className='mcq-section__container__row__col__main__sub-heading computer'>Ms Excel</h6>
-                                <h6 className='mcq-section__container__row__col__main__sub-heading computer'>Ms PowerPoint</h6>
-                                <h6 className='mcq-section__container__row__col__main__sub-heading computer'>Shortcuts</h6>
+                                <h6 className='mcq-section__container__row__col__main__sub-heading computer'><Link href={'/computer/computer-fundamentals'}>Computer Fundamental</Link></h6>
+                                <h6 className='mcq-section__container__row__col__main__sub-heading computer'><Link href={'/computer/operating-system'}>Operating System</Link></h6>
+                                <h6 className='mcq-section__container__row__col__main__sub-heading computer'><Link href={'/computer/ms-word'}>Ms Word</Link></h6>
+                                <h6 className='mcq-section__container__row__col__main__sub-heading computer'><Link href={'/computer/ms-excel'}>Ms Excel</Link></h6>
+                                <h6 className='mcq-section__container__row__col__main__sub-heading computer'><Link href={'/computer/ms-powerpoint'}>Ms PowerPoint</Link></h6>
+                                <h6 className='mcq-section__container__row__col__main__sub-heading computer'><Link href={'/computer/shortcuts'}>Shortcuts</Link></h6>
                             </div>
                         </div>
 
@@ -39,14 +42,14 @@ const McqsSection = () => {
                             <div className='mcq-section__container__row__col__main__line'></div>
                             
                             <div>
-                                <h6 className='mcq-section__container__row__col__main__sub-heading program'>C#</h6>
-                                <h6 className='mcq-section__container__row__col__main__sub-heading program'>Java</h6>
-                                <h6 className='mcq-section__container__row__col__main__sub-heading program'>Database</h6>
-                                <h6 className='mcq-section__container__row__col__main__sub-heading program'>HTML</h6>
-                                <h6 className='mcq-section__container__row__col__main__sub-heading program'>CSS</h6>
-                                <h6 className='mcq-section__container__row__col__main__sub-heading program'>JavaScript</h6>
-                                <h6 className='mcq-section__container__row__col__main__sub-heading program'>Php</h6>
-                                <h6 className='mcq-section__container__row__col__main__sub-heading program'>React</h6>
+                                <h6 className='mcq-section__container__row__col__main__sub-heading program'><Link href={'/programming/c-sharp'}>C#</Link></h6>
+                                <h6 className='mcq-section__container__row__col__main__sub-heading program'><Link href={'/programming/java'}>Java</Link></h6>
+                                <h6 className='mcq-section__container__row__col__main__sub-heading program'><Link href={'/programming/database'}>Database</Link></h6>
+                                <h6 className='mcq-section__container__row__col__main__sub-heading program'><Link href={'/programming/html'}>HTML</Link></h6>
+                                <h6 className='mcq-section__container__row__col__main__sub-heading program'><Link href={'/programming/css'}>CSS</Link></h6>
+                                <h6 className='mcq-section__container__row__col__main__sub-heading program'><Link href={'/programming/javascript'}>JavaScript</Link></h6>
+                                <h6 className='mcq-section__container__row__col__main__sub-heading program'><Link href={'/programming/php'}>Php</Link></h6>
+                                <h6 className='mcq-section__container__row__col__main__sub-heading program'><Link href={'/programming/react'}>React</Link></h6>
                             </div>
                         </div>
 
@@ -55,10 +58,10 @@ const McqsSection = () => {
                             <div className='mcq-section__container__row__col__main__line'></div>
                             
                             <div>
-                                <h6 className='mcq-section__container__row__col__main__sub-heading management'>Marketing</h6>
-                                <h6 className='mcq-section__container__row__col__main__sub-heading management'>Business Management</h6>
-                                <h6 className='mcq-section__container__row__col__main__sub-heading management'>HRM</h6>
-                                <h6 className='mcq-section__container__row__col__main__sub-heading management'>Communication Skills</h6>
+                                <h6 className='mcq-section__container__row__col__main__sub-heading management'><Link href={'/management/marketing'}>Marketing</Link></h6>
+                                <h6 className='mcq-section__container__row__col__main__sub-heading management'><Link href={'/management/business-management'}>Business Management</Link></h6>
+                                <h6 className='mcq-section__container__row__col__main__sub-heading management'><Link href={'/management/hrm'}>HRM</Link></h6>
+                                <h6 className='mcq-section__container__row__col__main__sub-heading management'><Link href={'/management/communication-skills'}>Communication Skills</Link></h6>
                             </div>
                         </div>
 
@@ -67,10 +70,10 @@ const McqsSection = () => {
                             <div className='mcq-section__container__row__col__main__line'></div>
                             
                             <div>
-                                <h6 className='mcq-section__container__row__col__main__sub-heading commerce'>Accounting</h6>
-                                <h6 className='mcq-section__container__row__col__main__sub-heading commerce'>Economics</h6>
-                                <h6 className='mcq-section__container__row__col__main__sub-heading commerce'>GST</h6>
-                                <h6 className='mcq-section__container__row__col__main__sub-heading commerce'>Tally</h6>
+                                <h6 className='mcq-section__container__row__col__main__sub-heading commerce'><Link href={'/commerce/accounting'}>Accounting</Link></h6>
+                                <h6 className='mcq-section__container__row__col__main__sub-heading commerce'><Link href={'/commerce/economics'}>Economics</Link></h6>
+                                <h6 className='mcq-section__container__row__col__main__sub-heading commerce'><Link href={'/commerce/gst'}>GST</Link></h6>
+                                <h6 className='mcq-section__container__row__col__main__sub-heading commerce'><Link href={'/commerce/tally'}>Tally</Link></h6>
                             </div>
                         </div>
 
@@ -79,8 +82,8 @@ const McqsSection = () => {
                             <div className='mcq-section__container__row__col__main__line'></div>
                             
                             <div>
-                                <h6 className='mcq-section__container__row__col__main__sub-heading current-affairs'>Pakistan Current Affairs</h6>
-                                <h6 className='mcq-section__container__row__col__main__sub-heading current-affairs'>World Current Affairs</h6>
+                                <h6 className='mcq-section__container__row__col__main__sub-heading current-affairs'><Link href={'/current-affairs/pakistan-current-affairs'}>Pakistan Current Affairs</Link></h6>
+                                <h6 className='mcq-section__container__row__col__main__sub-heading current-affairs'><Link href={'/current-affairs/world-current-affairs'}>World Current Affairs</Link></h6>
                             </div>
                         </div>
                     </Col>

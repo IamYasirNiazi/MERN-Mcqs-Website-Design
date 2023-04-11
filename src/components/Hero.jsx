@@ -10,9 +10,9 @@ const Hero = () => {
             <Container className='hero__container'>
                 <Row className='hero__container__row'>
 
-                    <Col className='col col-md-6 hero__container__row__col1'>
-                        <h2>Lorem ipsum dolor sit amet.</h2>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi temporibus, quo repellendus eos a perspiciatis eveniet necessitatibus perferendis, tempore in, recusandae nam? Exercitationem totam minima hic eius pariatur optio ex.</p>
+                    <Col className='col col-md-7 col-lg-6 hero__container__row__col1'>
+                        <h2>Top Pakistani MCQ's Website, Where You Can Find Mcqs Of All Subjects</h2>
+                        <p>Our platform offers a vast database of practice questions covering a range of topics, from science and technology to current affairs and history. Whether you're a student preparing for academic exams or a professional seeking to enhance your knowledge for career advancement, MCQs Pakistan has got you covered.</p>
                     </Col>
 
                     <Col className='col col-md-5 hero__container__row__col2'>

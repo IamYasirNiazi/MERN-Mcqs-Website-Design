@@ -17,7 +17,7 @@ const McqsAll = ({category}) => {
                             <div className='mcqs-all__container__row__col1__main__list'>
                             {category.points.map((tit, index)=>{
                                 return(
-                                <span key={index}><i class="ri-arrow-right-s-line"></i> &ensp; <Link href={`/general-knowledge/${tit.href}`}>{tit.title}</Link></span>
+                                <span key={index}><i className="ri-arrow-right-s-line"></i> &ensp; <Link href={`/general-knowledge/${tit.href}`}>{tit.title}</Link></span>
                             )})}
                                 {/* <li><i>i</i> &ensp; Grammer </li>
                                 <li><i>i</i> &ensp; Grammer </li>

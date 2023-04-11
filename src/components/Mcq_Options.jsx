@@ -35,14 +35,16 @@ export const Checkboxes = ({options, answer})=>{
                     />
                     <span>{option.label}</span>
                 </label>
-                {selected && option.value == answer && <b><i style={{color: "green"}} class="ri-check-fill"></i></b>}
+                {selected && option.value == answer && <b><i style={{color: "green"}} className="ri-check-fill"></i></b>}
                 {selected && option.value !== answer && (
-                    <span style={{color: "red"}}><i class="ri-close-fill"></i></span>
+                    <span style={{color: "red"}}><i className="ri-close-fill"></i></span>
                 )}
             </div>
         ))}
-        <button className="mt-2" onClick={()=>btnShow()}>{!answerShow? "Show Answer" : "Hide Answer"}</button>
-        {answerShow && <div className="content">{answer}</div>}
+        <div>
+          <button className="mt-2" onClick={()=>btnShow()}>{!answerShow? "Show Answer" : "Hide Answer"}</button>
+          {answerShow && <span className="content">{answer}</span>}
+        </div>
     </>
   )
 }
