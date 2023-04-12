@@ -3,34 +3,70 @@ import React, { useEffect, useRef, useState } from 'react';
 import {Container, Row, Col} from 'reactstrap';
 
 
+
 const Header = () => {
 
-    const listRef = useRef(null);
-    const [listVisible, setListVisible] = useState(false);
 
-    useEffect(() => {
-    function handleClickOutside(event) {
-      if (listRef.current && !listRef.current.contains(event.target)) {
-        setListVisible(false);
+  // Othe List Show Hide Logic
+  const listRef = useRef(null);
+
+  useEffect(() => {
+
+    if(window.innerWidth>=767){
+
+      function handleClickOutside(event) {
+        if (listRef.current && !listRef.current.contains(event.target)) {
+          const list = document.getElementById("other-list")
+          list.classList.remove("show-other-list")
+        }
+      }
+  
+      document.addEventListener('click', handleClickOutside);
+      return () => {
+        document.removeEventListener('click', handleClickOutside);
+      };
+
+    }
+
+  }, [listRef]);
+  
+    
+  function showList(event){
+    const list = document.getElementById("other-list")
+    list.classList.toggle("show-other-list")
+    event.stopPropagation();
+  }
+
+
+
+
+  // Toogle Button Logic
+  const toggleRef = useRef(null)
+  
+  useEffect(() => {
+    function clickOutside(event) {
+      const nav = document.getElementById("navigation")
+      if (toggleRef.current && !toggleRef.current.contains(event.target)) {
+        nav.classList.remove("toggle-show")
       }
     }
-
-    document.addEventListener('click', handleClickOutside);
+    
+    document.addEventListener('click', clickOutside);
     return () => {
-      document.removeEventListener('click', handleClickOutside);
+      document.removeEventListener('click', clickOutside);
     };
-  }, [listRef]);
-    
+  }, [toggleRef, listRef]);
+
      
-  function showList(){
-        // const list = document.getElementById("other-list")
-        // list.classList.toggle("show-other-list")
-        setListVisible(!listVisible)
-    }
-    
+      
+  function showNavFunc(){
+    const nav = document.getElementById("navigation")
+    nav.classList.toggle("toggle-show")
+  }
 
     
-
+    
+    
 
   return (
     <>
@@ -41,27 +77,28 @@ const Header = () => {
 
                         <div className='header__container__row__col__main'>
                             <h5 className='header__container__row__col__main__logo'><Link href={'/'}>PakMcqsHub</Link></h5>
-                            <ul className='header__container__row__col__main__navigation'>
-                                <li><Link href={'/'}>Home</Link></li>
-                                <li><Link href={'/general-knowledge'}>GK Mcqs</Link></li>
-                                <li><Link href={'/everyday-science'}>Everyday Science</Link></li>
-                                <li><Link href={'/pak-study'}>Pak Study</Link></li>
-                                <li><Link href={'/islamic-study'}>Islamic Study</Link></li>
-                                <li><Link href={'/current-affairs'}>Current Affairs</Link></li>
-                                <li>
-                                    <span id='other' onClick={showList} ref={listRef}>Other</span>
-                                    {listVisible && <ul id='other-list' className='show-other-list'>
-                                        <li><Link href={'/math'}>Math Mcqs</Link></li>
-                                        <li><Link href={'/english'}>English Mcqs</Link></li>
-                                        <li><Link href={'/physics'}>Physics Mcqs</Link></li>
-                                        <li><Link href={'/chemistry'}>Chemistry Mcqs</Link></li>
-                                        <li><Link href={'/computer'}>Computer Mcqs</Link></li>
-                                        <li><Link href={'/programming'}>Programming Mcqs</Link></li>
-                                        <li><Link href={'/biology'}>Biology Mcqs</Link></li>
-                                    </ul>}
-                                </li>
-                            </ul>
+                            {<ul className='header__container__row__col__main__navigation' id='navigation'>
+                              <li><Link href={'/'}>Home</Link></li>
+                              <li><Link href={'/general-knowledge'}>GK Mcqs</Link></li>
+                              <li><Link href={'/everyday-science'}>Everyday Science</Link></li>
+                              <li><Link href={'/pak-study'}>Pak Study</Link></li>
+                              <li><Link href={'/islamic-study'}>Islamic Study</Link></li>
+                              <li><Link href={'/current-affairs'}>Current Affairs</Link></li>
+                              <li className='other'>
+                                <span id='other' onClick={showList} ref={listRef}>Other</span>
+                                {<ul id='other-list'>
+                                    <li><Link href={'/math'}>Math Mcqs</Link></li>
+                                    <li><Link href={'/english'}>English Mcqs</Link></li>
+                                    <li><Link href={'/physics'}>Physics Mcqs</Link></li>
+                                    <li><Link href={'/chemistry'}>Chemistry Mcqs</Link></li>
+                                    <li><Link href={'/computer'}>Computer Mcqs</Link></li>
+                                    <li><Link href={'/programming'}>Programming Mcqs</Link></li>
+                                    <li><Link href={'/biology'}>Biology Mcqs</Link></li>
+                                </ul>}
+                              </li>
+                            </ul>}
                             {/* <button className='header__container__row__col__main__btn btn'>Submit MCQ?</button> */}
+                            <i className="ri-menu-fill" onClick={showNavFunc} ref={toggleRef}></i>
                         </div>
 
                     </Col>

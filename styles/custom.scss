@@ -60,19 +60,41 @@ section{
 }
 
 
-.show-other-list{
+.toggle-show{
   position: absolute !important;
-  right: -1.5rem;
   top: 2rem;
-  z-index: 10;
+  right: 0rem;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  z-index: 20 !important;
+  gap: .7rem !important;
+  width: 80%;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  border-radius: .2rem;
+  color: theme-color(site-color2);
+  background: theme-color(site-third);
+
+}
+
+
+.show-other-list{
+  @media (min-width:768px){
+    position: absolute !important;
+    right: -1.5rem;
+    top: 2rem;
+    z-index: 10;
+    background-color: theme-color(site-eigth) !important;
+    padding: 1.5rem 3rem !important;
+    border-radius: .3rem !important;
+  }
+
+  gap: .5rem;
   display: flex !important;
   flex-direction: column;
   align-items: flex-start;
-  gap: .5rem;
-  padding: 1.5rem 3rem !important;
-  border-radius: .3rem !important;
   color: theme-color(site-color2) !important;
-  background-color: theme-color(site-eigth) !important;
 
 }
 
@@ -83,7 +105,6 @@ section{
 
   // background: theme-color("site-primary");
   padding: .8rem 1rem;
-  padding-top: .9rem;
 
   &__container{
 
@@ -94,12 +115,20 @@ section{
 
               &__main{
                   display: flex;
-                  align-items: center;
+                  align-items: center !important;
                   // justify-content: center;
                   justify-content: space-between;
                   // gap: 4rem;
+                  position: relative;
+                  flex-wrap: wrap;
+
+                  @media (min-width:768px) and (max-width:991px){
+                    justify-content: center;
+                    align-items: center;
+                  }
 
                   &__logo{
+                    margin-top: .5rem;
                     font-size: 1.5rem;
                     font-weight: bold;
                     text-decoration: none;
@@ -120,8 +149,8 @@ section{
                       margin-left: -2rem;
                       margin-top: .8rem;
 
-                      @media (max-width:991px){
-                        display: none !important;
+                      @media (max-width:767px){
+                        display: none;
                       }
 
                       @media (min-width:768px) and (max-width:991px){
@@ -162,31 +191,70 @@ section{
                         outline: none;
                         border: none;
                         cursor: pointer;
-
                       }
+                    }
 
+
+                    @media (max-width:767px){
+                      li.other{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        justify-content: flex-start;
+  
+                        span::after{
+                          content: '';
+                          background-image: url("../src/assets/arrow-down-w.svg");
+                          display: inline-block;
+                          background-size: cover;
+                          width: 1rem;
+                          height: 1.2rem;
+                          position: absolute;
+                          top: .15rem;
+                          left: 3.2rem;
+                        }
+  
+                        ul{
+                          margin-top: .8rem;
+                          margin-left: -1rem;
+                          gap: .8rem;
+                        }
+                      }
                     }
 
                   }
 
-                  &__btn{
+                  // &__btn{
 
-                    background-color: theme-color("site-secondary");
-                    color: white;
+                  //   background-color: theme-color("site-secondary");
+                  //   color: white;
 
-                    @media (max-width:991px){
-                      display: none !important;
+                  //   @media (max-width:991px){
+                  //     display: none !important;
                       
+                  //   }
+
+                  //   &:hover{
+                  //     background: darken($color: theme-color("site-secondary"), $amount: 5);
+                  //     color: theme-color("site-color2");
+
+
+                  //   }
+
+                  // }
+
+                  i{
+                    padding: .3rem .6rem;
+                    background: theme-color(site-secondary);
+                    color: theme-color(site-color2);
+                    border-radius: .2rem;
+                    cursor: pointer;
+
+                    @media (min-width:768px){
+                      display: none !important;
                     }
-
-                    &:hover{
-                      background: darken($color: theme-color("site-secondary"), $amount: 5);
-                      color: theme-color("site-color2");
-
-
-                    }
-
                   }
+
               }
           }
       }

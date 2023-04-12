@@ -6,7 +6,7 @@ const DataSchema = new Schema({
     type: String,
     required: [true, 'Question is required'],
     trim: true,
-    unique: true,
+    // unique: true,
   },
   question: {
     type: String,
